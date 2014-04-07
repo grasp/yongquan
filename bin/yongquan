@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+require  File.expand_path("../../lib/yongquan.rb",__FILE__)
+
+case ARGV[0]
+	when "download"
+	 puts "download"
+	 initialize_single_stock_folder(ARGV[1],ARGV[2])
+	 download_yahoo_history(ARGV[1],ARGV[2])
+	 when "batch_download"
+	 	puts "batch_download"
+	 	batch_download_yahoo_history(ARGV[1])
+	 when "append"
+	 	puts "append"
+	 	append_raw_data(ARGV[1],ARGV[2])
+	 when "batch_append"
+	 	puts "batch_append"
+	 	batch_append_raw_data_all(ARGV[1])
+	 when "help"
+	 	puts "ruby yongquan.rb download strategy_name symbol_id"
+	 	puts "ruby yongquan.rb batch_download strategy_name ; argv1-strategy name"
+	 	puts "ruby yongquan.rb append strategy_name symbol_id"
+	 	puts "ruby yongquan.rb batch_append strategy_name ; argv1-strategy name"
+	 else
+	 	puts "not recognized"
+	 end
+
+	 puts "end of main"

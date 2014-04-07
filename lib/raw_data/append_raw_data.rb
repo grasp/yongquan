@@ -100,6 +100,11 @@ def batch_append_raw_data(strategy,symbol_array)
    append_raw_data(strategy,symbol)
  end
 
+ def batch_append_raw_data_all(strategy)
+       symbol_array=$all_stock_list.keys[0..2470]
+       batch_append_raw_data(strategy,symbol_array)
+ end
+
 end
 
 if $0==__FILE__
